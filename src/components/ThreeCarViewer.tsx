@@ -488,7 +488,7 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
   return (
     <div 
       ref={mountRef}
-      className="relative w-full h-[240px] md:h-[320px] flex items-center justify-center bg-white select-none cursor-grab active:cursor-grabbing overflow-hidden touch-none"
+      className="relative w-full h-[160px] sm:h-[220px] md:h-[320px] flex items-center justify-center bg-white select-none cursor-grab active:cursor-grabbing overflow-hidden touch-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}

@@ -46,9 +46,9 @@ export default memo(function SectionOQueSera() {
   return (
     <section
       id="ferramenta"
-      className="relative py-24 md:py-32 bg-brand-dark overflow-hidden border-t border-white/5"
+      className="relative py-24 md:py-32 bg-brand-dark overflow-x-hidden border-t border-white/5"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 overflow-x-hidden">
         
         {/* Client branding - right after Rolagem, larger, no glow */}
         <div className="flex flex-col items-center mb-16">

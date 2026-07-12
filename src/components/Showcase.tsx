@@ -19,7 +19,7 @@ export default function Showcase() {
       year: "2026",
       client: "Porsche AG",
       description: "Um configurador em tempo real tridimensional de alta fidelidade desenvolvido com WebGL personalizado, combinando realismo de reflexos físicos a taxas de renderização perfeitas de 60 FPS em qualquer dispositivo móvel.",
-      image: "/src/assets/images/grey_car_1783720973242.jpg",
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200",
       accentColor: "from-red-600 to-amber-500",
       tags: ["React Three Fiber", "GLSL Shaders", "GSAP ScrollTrigger", "WebGL"],
       metrics: { label: "Configurações Realizadas", value: "2.4M+" }

@@ -47,7 +47,7 @@ export default memo(function SectionResponsividade() {
                 <div className="grid grid-cols-3 gap-3 flex-grow items-center relative z-10">
                   <div className="col-span-2 h-24 border border-white/10 rounded-lg bg-brand-dark/50 relative overflow-hidden group/img">
                     <img 
-                      src="/src/assets/images/Fotos do carro DuoExo.webp" 
+                      src="/images/Fotos do carro DuoExo.webp" 
                       alt="Configurador 3D DuoExo" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
@@ -81,7 +81,7 @@ export default memo(function SectionResponsividade() {
                 <div className="flex-grow flex flex-col justify-center gap-1.5 relative overflow-hidden my-2 rounded-md">
                   <div className="h-16 border border-white/10 rounded overflow-hidden relative group/img2">
                     <img 
-                      src="/src/assets/images/Fotos do carro DuoExo.webp" 
+                      src="/images/Fotos do carro DuoExo.webp" 
                       alt="Configurador Mobile DuoExo" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover/img2:scale-105 transition-transform duration-500"

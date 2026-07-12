@@ -95,7 +95,7 @@ export default memo(function InteractiveConfigurator() {
       colors={['#3b82f6', '#d4af37', '#1d4ed8']}
       fillOpacity={0.12}
     >
-      <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-between h-full relative overflow-hidden">
+      <div className="p-3 sm:p-6 md:p-8 flex flex-col justify-between h-full relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
         {/* Floating active state notifier */}
@@ -130,7 +130,7 @@ export default memo(function InteractiveConfigurator() {
           </div>
 
           {/* Visual Canvas Simulator */}
-          <div className="relative rounded-2xl bg-white border border-white/10 flex items-center justify-center min-h-[220px] sm:min-h-[240px] md:min-h-[320px] overflow-hidden group w-full">
+          <div className="relative rounded-2xl bg-white border border-white/10 flex items-center justify-center min-h-[160px] sm:min-h-[220px] md:min-h-[320px] overflow-hidden group w-full">
             <ThreeCarViewer
               rotationAngle={rotationAngle}
               onRotationChange={setRotationAngle}
@@ -148,7 +148,7 @@ export default memo(function InteractiveConfigurator() {
           </div>
 
           {/* Rotation Orbit controller slider */}
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             <div className="flex justify-between font-mono text-[9px] text-zinc-500">
               <span>Ângulo de Órbita 360°</span>
               <span className="text-zinc-300">{rotationAngle}°</span>
@@ -164,9 +164,9 @@ export default memo(function InteractiveConfigurator() {
           </div>
 
           {/* Configuration customization controllers */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/5 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 border-t border-white/5 pt-3 sm:pt-4">
             {/* Paint selections */}
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-wider block">
                 Pintura Externa
               </span>
@@ -176,7 +176,7 @@ export default memo(function InteractiveConfigurator() {
                     key={c.id}
                     onClick={() => setPaint(c.id)}
                     style={{ backgroundColor: c.hex }}
-                    className={`w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border transition-all ${
+                    className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full border transition-all shrink-0 ${
                       paint === c.id 
                         ? "border-white scale-110 shadow-lg" 
                         : "border-white/10 hover:border-white/30"
@@ -192,7 +192,7 @@ export default memo(function InteractiveConfigurator() {
             </div>
 
             {/* Wheels select buttons */}
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-wider block">
                 Modelo das Rodas
               </span>
@@ -201,7 +201,7 @@ export default memo(function InteractiveConfigurator() {
                   <button
                     key={w.id}
                     onClick={() => setWheels(w.id)}
-                    className={`px-2 py-1.5 rounded-lg border text-[9px] font-mono transition-all focus:outline-none ${
+                    className={`px-1.5 sm:px-2 py-1 sm:py-1.5 rounded-lg border text-[8px] sm:text-[9px] font-mono transition-all focus:outline-none ${
                       wheels === w.id
                         ? "bg-brand-accent/10 border-brand-accent/50 text-white"
                         : "bg-brand-dark border-white/5 text-zinc-500 hover:text-zinc-400 hover:border-white/10"
@@ -219,9 +219,9 @@ export default memo(function InteractiveConfigurator() {
           </div>
 
           {/* Advanced colors selectors: Wheel Color */}
-          <div className="border-t border-white/5 pt-4">
+          <div className="border-t border-white/5 pt-3 sm:pt-4">
             {/* Wheel color selection */}
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-wider block">
                 Cor das Rodas
               </span>
@@ -231,7 +231,7 @@ export default memo(function InteractiveConfigurator() {
                     key={wc.hex}
                     onClick={() => setWheelColor(wc.hex)}
                     style={{ backgroundColor: wc.hex }}
-                    className={`w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full border transition-all ${
+                    className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border transition-all shrink-0 ${
                       wheelColor === wc.hex 
                         ? "border-brand-accent scale-110 shadow-lg" 
                         : "border-white/10 hover:border-white/30"
@@ -249,10 +249,10 @@ export default memo(function InteractiveConfigurator() {
           </div>
 
           {/* Aero pack carbon fiber toggle */}
-          <div className="flex items-center justify-between border-t border-white/5 pt-4">
-            <div className="space-y-0.5">
-              <span className="text-xs font-semibold text-white">Pacote Aerodinâmico</span>
-              <span className="text-[10px] text-zinc-500 block">Spoiler e difusor de carbono ativo</span>
+          <div className="flex items-center justify-between border-t border-white/5 pt-3 sm:pt-4 gap-2">
+            <div className="space-y-0.5 min-w-0">
+              <span className="text-[11px] sm:text-xs font-semibold text-white">Pacote Aerodinâmico</span>
+              <span className="text-[9px] sm:text-[10px] text-zinc-500 block truncate">Spoiler e difusor de carbono ativo</span>
             </div>
             <button
               onClick={() => setAeroKit(!aeroKit)}
@@ -269,11 +269,11 @@ export default memo(function InteractiveConfigurator() {
         </div>
 
         {/* Dynamic PDF Resumo generator CTA */}
-        <div className="mt-8 border-t border-white/5 pt-4">
+        <div className="mt-4 sm:mt-8 border-t border-white/5 pt-3 sm:pt-4">
           <button
             onClick={triggerPDFMock}
             disabled={isDownloading}
-            className="w-full py-3.5 rounded-xl bg-brand-light hover:bg-white text-brand-dark text-xs font-semibold tracking-wider transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50"
+            className="w-full py-2.5 sm:py-3.5 rounded-xl bg-brand-light hover:bg-white text-brand-dark text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50"
             id="config-pdf-btn"
           >
             {isDownloading ? (

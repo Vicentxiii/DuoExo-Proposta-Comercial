@@ -32,28 +32,28 @@ export default memo(function SectionCredibilidade() {
       desc: "Maior veículo de finanças e investimentos do país",
       tag: "Mercado Financeiro",
       url: "https://www.infomoney.com.br/consumo/super-veloce-unico-configurador/",
-      badgeUrl: "/src/assets/images/INFO MONEY.png"
+      badgeUrl: "/images/INFO MONEY.png"
     },
     {
       name: "CNN Brasil",
       desc: "Líder global em cobertura jornalística e credibilidade",
       tag: "Impacto Global",
       url: "https://www.cnnbrasil.com.br/auto/super-veloce-unico-hipercarro-nacional-de-r-15-milhao-e-personalizavel/",
-      badgeUrl: "/src/assets/images/CNN DESTAUQE.png"
+      badgeUrl: "/images/CNN DESTAUQE.png"
     },
     {
       name: "Olhar Digital",
       desc: "Referência em tecnologia, inovação e futuro digital",
       tag: "Tecnologia & Inovação",
       url: "https://olhardigital.com.br/2026/04/24/carros-e-tecnologia/parece-videogame-site-deixa-voce-personalizar-supercarro-brasileiro-de-r-15-milhao/",
-      badgeUrl: "/src/assets/images/Olhar digita l.png"
+      badgeUrl: "/images/Olhar digita l.png"
     },
     {
       name: "G1",
       desc: "Portal de Notícias do Grupo Globo",
       tag: "Destaque Nacional",
       url: "https://g1.globo.com/carros/noticia/2026/04/24/supercarro-brasileiro-de-r-15-milhao-ganha-configurador-virtual.ghtml",
-      badgeUrl: "/src/assets/images/DESTAQUE G1.png"
+      badgeUrl: "/images/DESTAQUE G1.png"
     }
   ];
 
@@ -76,7 +76,7 @@ export default memo(function SectionCredibilidade() {
             {/* Background image of Vicente Czar with high opacity as requested */}
             <div className="absolute inset-0 z-0">
               <img
-                src="/src/assets/images/Vicente Czar.jpeg"
+                src="/images/Vicente Czar.jpeg"
                 alt="Vicente - Criador e Autoridade"
                 className="w-full h-full object-cover object-top opacity-85 transition-transform duration-700 group-hover:scale-102"
                 referrerPolicy="no-referrer"
