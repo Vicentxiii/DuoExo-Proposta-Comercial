@@ -129,21 +129,18 @@ export default function HeroCinematic() {
             >
               Resultado: mais tempo no site, mais valor percebido na marca e uma ferramenta que trabalha 24 horas por dia fechando vendas para você.
             </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col items-center gap-1 pt-4 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"
+              onClick={scrollDown}
+              id="hero-scroll-trigger"
+            >
+              <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-500 uppercase">Rolagem</span>
+              <ChevronDown className="w-4 h-4 text-brand-gold" />
+            </motion.div>
           </div>
 
-        </motion.div>
-
-        {/* Scroll down indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 1 }}
-          className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer opacity-50 hover:opacity-100 transition-opacity"
-          onClick={scrollDown}
-          id="hero-scroll-trigger"
-        >
-          <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-500 uppercase mb-2">Rolagem</span>
-          <ChevronDown className="w-4 h-4 text-brand-gold" />
         </motion.div>
 
       </div>

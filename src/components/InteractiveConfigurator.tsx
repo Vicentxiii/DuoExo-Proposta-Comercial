@@ -143,7 +143,7 @@ export default memo(function InteractiveConfigurator() {
             {/* Interactive Help Hint */}
             <div className="absolute bottom-3 left-4 pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 font-mono text-[9px] text-zinc-600">
               <Info className="w-3.5 h-3.5 text-brand-accent" />
-              <span>Gire com o mouse • Aproxime com scroll</span>
+              <span>Desktop: Gire com o mouse • Mobile: Arraste para girar</span>
             </div>
           </div>
 

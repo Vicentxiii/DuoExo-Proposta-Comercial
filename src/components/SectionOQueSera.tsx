@@ -59,12 +59,12 @@ export default memo(function SectionOQueSera() {
           </div>
         </div>
 
-        {/* Disclaimer Message */}
+        {/* Disclaimer Message - Red highlight to clearly indicate this is a preview */}
         <div className="mb-12 flex justify-center">
-          <div className="bg-brand-accent/10 border border-brand-accent/20 rounded-full px-6 py-2.5 backdrop-blur-md">
-            <p className="text-brand-accent text-[10px] md:text-xs font-bold tracking-wider text-center uppercase">
+          <div className="bg-red-500/10 border-2 border-red-500/30 rounded-2xl px-5 py-3.5 md:px-6 md:py-2.5 max-w-2xl">
+            <p className="text-red-400 text-[11px] md:text-xs font-bold tracking-wider text-center uppercase leading-relaxed">
               ESTA É UMA PRÉVIA FUNCIONAL DO CONFIGURADOR. 
-              <span className="block md:inline md:ml-2 text-zinc-400 font-normal">A VERSÃO FINAL SERÁ AINDA MAIS COMPLETA E PERSONALIZADA</span>
+              <span className="block md:inline md:ml-2 text-red-400/70 font-normal">A VERSÃO FINAL SERÁ AINDA MAIS COMPLETA E PERSONALIZADA</span>
             </p>
           </div>
         </div>

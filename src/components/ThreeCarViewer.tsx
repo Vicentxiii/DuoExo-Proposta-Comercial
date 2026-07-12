@@ -51,6 +51,9 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
   const isVisibleRef = useRef<boolean>(true);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  // Detect mobile for performance and behavior adjustments
+  const isMobileRef = useRef<boolean>(typeof window !== 'undefined' && window.innerWidth < 640);
+
   useEffect(() => {
     // Sync external rotation changes if any, but internal dragging will also update yawRef
     if (!isDragging) {
@@ -95,8 +98,10 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
     camera.position.set(0, 1.1, 4.2);
 
     // Create renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const isMobile = container.clientWidth < 640;
+    isMobileRef.current = isMobile;
+    const renderer = new THREE.WebGLRenderer({ antialias: !isMobile, alpha: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -104,15 +109,18 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
     renderer.toneMappingExposure = 1.3;
     container.appendChild(renderer.domElement);
 
+    // Allow vertical touch scrolling on the canvas, prevent horizontal
+    renderer.domElement.style.touchAction = 'pan-y';
+
     // Add high fidelity studio lighting for white studio background
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
 
-    const mainLight = new THREE.DirectionalLight(0xffffff, 2.2);
+    const mainLight = new THREE.DirectionalLight(0xffffff, isMobile ? 1.5 : 2.2);
     mainLight.position.set(5, 8, 5);
     mainLight.castShadow = true;
-    mainLight.shadow.mapSize.width = 1024;
-    mainLight.shadow.mapSize.height = 1024;
+    mainLight.shadow.mapSize.width = isMobile ? 512 : 1024;
+    mainLight.shadow.mapSize.height = isMobile ? 512 : 1024;
     mainLight.shadow.bias = -0.0001;
     scene.add(mainLight);
 
@@ -437,9 +445,13 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
   // Pointer/Drag events to turn car in 3D
   const handlePointerDown = (e: React.PointerEvent) => {
     if (isLoading || error) return;
-    e.currentTarget.setPointerCapture(e.pointerId);
     setIsDragging(true);
     lastPointerPos.current = { x: e.clientX, y: e.clientY };
+
+    // Only capture pointer on desktop to avoid interfering with touch scrolling
+    if (!('ontouchstart' in window)) {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
@@ -453,17 +465,22 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
     // Update yaw (horizontal) - infinite
     yawRef.current -= deltaX * 0.6;
     
-    // Update pitch (vertical) - limited to avoid flipping
-    const newPitch = pitchRef.current + deltaY * 0.4;
-    pitchRef.current = Math.min(Math.max(newPitch, -15), 45); // Limit from -15 to 45 degrees
+    // On mobile, only apply pitch if the dominant direction is horizontal
+    const isTouchDevice = 'ontouchstart' in window;
+    if (!isTouchDevice || Math.abs(deltaX) >= Math.abs(deltaY)) {
+      const newPitch = pitchRef.current + deltaY * 0.4;
+      pitchRef.current = Math.min(Math.max(newPitch, -15), 45);
+    }
 
-    // Report yaw back to parent if needed (clamped for UI consistency if they use it elsewhere)
+    // Report yaw back to parent
     onRotationChange(yawRef.current);
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
     if (isDragging) {
-      e.currentTarget.releasePointerCapture(e.pointerId);
+      if (!('ontouchstart' in window)) {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }
       setIsDragging(false);
     }
   };
@@ -473,6 +490,9 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
     if (!container) return;
 
     const handleNativeWheel = (e: WheelEvent) => {
+      // Only prevent page scroll on desktop (non-touch), not on mobile
+      if ('ontouchstart' in window) return;
+      
       // Prevent the page from scrolling when zooming inside the card
       e.preventDefault();
       const zoomSpeed = 0.0015;
@@ -488,7 +508,7 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
   return (
     <div 
       ref={mountRef}
-      className="relative w-full h-[200px] sm:h-[260px] md:h-[320px] flex items-center justify-center bg-white select-none cursor-grab active:cursor-grabbing overflow-hidden touch-none"
+      className="relative w-full h-[200px] sm:h-[260px] md:h-[320px] flex items-center justify-center bg-white select-none cursor-grab active:cursor-grabbing overflow-hidden touch-pan-y"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
