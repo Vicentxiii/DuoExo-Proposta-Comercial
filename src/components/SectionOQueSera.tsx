@@ -28,19 +28,18 @@ export default memo(function SectionOQueSera() {
   };
 
   const checklist = [
-    "visualizar o veículo em 360°",
-    "alterar cores em tempo real",
-    "trocar rodas",
-    "personalizar acessórios",
-    "visualizar cada alteração instantaneamente",
-    "gerar automaticamente um PDF completo contendo toda a configuração realizada"
+    "visualizar o veículo em 360° de qualquer ângulo",
+    "experimentar cores e acabamentos em tempo real",
+    "trocar rodas e acessórios com um clique",
+    "criar a combinação perfeita antes da compra",
+    "receber um PDF profissional com a configuração escolhida"
   ];
 
   const valuePillars = [
-    { label: "Mais organização.", color: "text-brand-accent bg-brand-accent/5 border-brand-accent/10" },
-    { label: "Mais velocidade.", color: "text-white bg-white/5 border-white/10" },
-    { label: "Mais profissionalismo.", color: "text-brand-gold bg-brand-gold/5 border-brand-gold/10" },
-    { label: "Mais conversão.", color: "text-white bg-gradient-to-r from-brand-accent/20 to-brand-gold/20 border-brand-accent/30 font-bold" }
+    { label: "Marca valorizada.", color: "text-brand-accent bg-brand-accent/5 border-brand-accent/10" },
+    { label: "Vendas aceleradas.", color: "text-white bg-white/5 border-white/10" },
+    { label: "Imagem premium.", color: "text-brand-gold bg-brand-gold/5 border-brand-gold/10" },
+    { label: "Diferencial real.", color: "text-white bg-gradient-to-r from-brand-accent/20 to-brand-gold/20 border-brand-accent/30 font-bold" }
   ];
 
   return (
@@ -48,7 +47,7 @@ export default memo(function SectionOQueSera() {
       id="ferramenta"
       className="relative py-24 md:py-32 bg-brand-dark overflow-x-hidden border-t border-white/5"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Client branding - right after Rolagem, larger, no glow */}
         <div className="flex flex-col items-center mb-16">
@@ -64,8 +63,8 @@ export default memo(function SectionOQueSera() {
         <div className="mb-12 flex justify-center">
           <div className="bg-brand-accent/10 border border-brand-accent/20 rounded-full px-6 py-2.5 backdrop-blur-md">
             <p className="text-brand-accent text-[10px] md:text-xs font-bold tracking-wider text-center uppercase">
-              ATENÇÃO: ISSO É APENAS UM ORÇAMENTO MOSTRANDO A CAPACIDADE DO NOSSO DEV. 
-              <span className="block md:inline md:ml-2 text-zinc-400 font-normal">O CONFIGURADOR SERÁ MAIS ROBUSTO DO QUE O APRESENTADO AQUI</span>
+              ESTA É UMA PRÉVIA FUNCIONAL DO CONFIGURADOR. 
+              <span className="block md:inline md:ml-2 text-zinc-400 font-normal">A VERSÃO FINAL SERÁ AINDA MAIS COMPLETA E PERSONALIZADA</span>
             </p>
           </div>
         </div>
@@ -77,20 +76,20 @@ export default memo(function SectionOQueSera() {
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <span className="font-mono text-xs text-brand-accent font-semibold tracking-widest uppercase block">
-                [ escopo do projeto ]
+                [ o que sua marca ganha ]
               </span>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                O que será desenvolvido
+                Uma ferramenta de vendas sob medida para seu negócio
               </h2>
             </div>
 
             <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-light border-l-2 border-brand-accent/40 pl-4">
-              Um Configurador 3D Interativo em Tempo Real, desenvolvido exclusivamente para sua empresa.
+              Cada detalhe é pensado para vender. Seu cliente personaliza, visualiza e se apaixona antes mesmo de falar com um vendedor.
             </p>
 
             <div className="space-y-4">
               <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest block">
-                O cliente poderá:
+                Com esta ferramenta, seu cliente:
               </span>
               
               <ul className="space-y-3.5">
@@ -119,7 +118,7 @@ export default memo(function SectionOQueSera() {
                 <FileText className="w-5 h-5" />
               </div>
               <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
-                Esse PDF funciona como um resumo profissional da configuração escolhida, facilitando o fechamento comercial entre vendedor e cliente.
+                Cada configuração vira um PDF profissional. Seu vendedor recebe um resumo pronto para fechar o negócio.
               </p>
             </div>
 

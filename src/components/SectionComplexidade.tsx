@@ -42,13 +42,13 @@ export default memo(function SectionComplexidade() {
         {/* Section Header */}
         <div className="max-w-3xl space-y-4">
           <span className="font-mono text-xs text-brand-gold font-bold tracking-widest uppercase block">
-            [ engenharia de software ]
+            [ desenvolvimento artesanal ]
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Por que este projeto possui alto valor?
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
-            Desenvolver um configurador 3D profissional não significa apenas criar uma interface bonita. É um projeto de alta complexidade técnica.
+            O valor não está no software. Está no que ele entrega: uma experiência exclusiva, construída sob medida para posicionar sua marca acima da concorrência.
           </p>
         </div>
 
@@ -80,10 +80,10 @@ export default memo(function SectionComplexidade() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-xl sm:text-2xl font-semibold text-white tracking-tight leading-snug">
-                    Cada detalhe precisa ser desenvolvido para funcionar com fluidez, carregamento otimizado, precisão visual e compatibilidade entre dispositivos.
+                    Cada linha de código é escrita à mão para seu projeto. Nada de temas prontos, nada de soluções genéricas. Performance, fluidez e precisão visual em qualquer dispositivo.
                   </p>
                   <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                    [ viewport scaling & buffer memory optimization ]
+                    [ feito sob medida, linha por linha ]
                   </p>
                 </div>
               </div>
@@ -110,10 +110,10 @@ export default memo(function SectionComplexidade() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-base sm:text-lg font-light text-zinc-300 leading-relaxed">
-                    Pouquíssimos profissionais no Brasil possuem experiência real nesse tipo de desenvolvimento.
+                    Profissionais capazes de entregar essa experiência são raros. São anos de domínio técnico em computação gráfica, otimização WebGL e engenharia de experiência.
                   </p>
                   <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                    [ escassez e alta especialização técnica ]
+                    [ expertise rara e domínio técnico ]
                   </p>
                 </div>
               </div>
@@ -139,10 +139,10 @@ export default memo(function SectionComplexidade() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-sm sm:text-base font-light text-zinc-300 leading-relaxed">
-                    O processo envolve dezenas de etapas invisíveis ao usuário final, exigindo conhecimento especializado e muitas horas de engenharia, testes, otimizações e validações.
+                    O que seu cliente vê é fluidez. O que não vê são dezenas de horas de engenharia, testes de renderização, ajustes de performance e validação em múltiplos dispositivos.
                   </p>
                   <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                    [ compilations, pipelines & quality assurance ]
+                    [ performance testada em cada dispositivo ]
                   </p>
                 </div>
               </div>
@@ -181,10 +181,10 @@ export default memo(function SectionComplexidade() {
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 border-t border-white/5 pt-4">
                     <div className="px-3 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-mono text-zinc-400">
-                      Esse não é um produto pronto.
+                      Nada de template pronto.
                     </div>
                     <div className="px-3 py-1 rounded-md bg-brand-gold/10 border border-brand-gold/20 text-[10px] font-mono text-brand-gold font-medium">
-                      É um sistema desenvolvido sob medida.
+                      Cada peça é desenhada exclusivamente para sua marca.
                     </div>
                   </div>
                 </div>

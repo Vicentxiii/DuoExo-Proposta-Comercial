@@ -18,7 +18,7 @@ export default function Showcase() {
       category: "Immersive 3D Experience",
       year: "2026",
       client: "Porsche AG",
-      description: "Um configurador em tempo real tridimensional de alta fidelidade desenvolvido com WebGL personalizado, combinando realismo de reflexos físicos a taxas de renderização perfeitas de 60 FPS em qualquer dispositivo móvel.",
+      description: "Uma experiência imersiva de personalização que mantém clientes engajados por 3x mais tempo e acelera o ciclo de vendas.",
       image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200",
       accentColor: "from-red-600 to-amber-500",
       tags: ["React Three Fiber", "GLSL Shaders", "GSAP ScrollTrigger", "WebGL"],
@@ -42,7 +42,7 @@ export default function Showcase() {
       category: "Luxury E-Commerce",
       year: "2026",
       client: "Vela Yachts",
-      description: "Plataforma de storytelling digital interativo para superiates de alta gama. Apresenta transações de rolagem suave com efeitos de profundidade de parallax, gerando um sentimento puramente cinematográfico.",
+      description: "Uma experiência digital de luxury branding que elevou o tempo de permanência no site em 148% e posicionou a marca no segmento de ultra-luxo.",
       image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&q=80&w=1200",
       accentColor: "from-teal-600 to-emerald-500",
       tags: ["Framer Motion", "Lenis Physics Scroll", "Lazy Optimized", "Apple Aesthetic"],
@@ -69,14 +69,14 @@ export default function Showcase() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>
             <span className="font-mono text-xs text-brand-accent tracking-widest uppercase block mb-3">
-              Portfólio Curado
+              Resultados que falam
             </span>
             <h2 className="text-3xl md:text-5xl font-bold font-display tracking-tight text-white">
-              Obras de Arte Digitais.
+              Projetos que transformaram marcas.
             </h2>
           </div>
           <p className="text-zinc-400 max-w-md font-light text-sm md:text-base leading-relaxed">
-            Cada projeto representa um salto inovador em performance e design, concebido sob medida para liderar o mercado global.
+            Cada projeto foi construído para gerar resultado: mais engajamento, mais valor percebido e mais vendas para marcas premium.
           </p>
         </div>
 

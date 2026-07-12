@@ -61,10 +61,10 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { id: "ferramenta", label: "A Ferramenta" },
-    { id: "desenvolvimento", label: "O Sistema" },
-    { id: "credibilidade", label: "Experiência" },
-    { id: "investimento", label: "Valores" },
+    { id: "ferramenta", label: "Solução" },
+    { id: "desenvolvimento", label: "Valor" },
+    { id: "credibilidade", label: "Resultados" },
+    { id: "investimento", label: "Investimento" },
   ];
 
   return (

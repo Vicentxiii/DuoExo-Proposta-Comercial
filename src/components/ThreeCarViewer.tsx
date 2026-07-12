@@ -488,7 +488,7 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
   return (
     <div 
       ref={mountRef}
-      className="relative w-full h-[160px] sm:h-[220px] md:h-[320px] flex items-center justify-center bg-white select-none cursor-grab active:cursor-grabbing overflow-hidden touch-none"
+      className="relative w-full h-[200px] sm:h-[260px] md:h-[320px] flex items-center justify-center bg-white select-none cursor-grab active:cursor-grabbing overflow-hidden touch-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -498,7 +498,7 @@ const ThreeCarViewer = React.memo(function ThreeCarViewer({
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-20 gap-3">
           <Loader2 className="w-8 h-8 text-brand-accent animate-spin" />
           <span className="font-mono text-[10px] text-zinc-600 tracking-wider">
-            Carregando Lexus 3D Real ({loadingProgress}%)
+            Carregando experiência interativa ({loadingProgress}%)
           </span>
           <div className="w-40 h-1.5 bg-zinc-200 rounded-full overflow-hidden">
             <div 

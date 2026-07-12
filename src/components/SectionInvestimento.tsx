@@ -35,17 +35,17 @@ export default memo(function SectionInvestimento() {
 
   const getVerbatimAssetExplanation = () => {
     if (hasAsset) {
-      return "Nesse cenário, toda a modelagem já está pronta, permitindo concentrar o desenvolvimento na programação, interação, otimização e experiência do usuário.";
+      return "Com o modelo 3D pronto, o desenvolvimento foca totalmente na experiência interativa e na performance. O resultado é uma entrega mais rápida e um custo reduzido.";
     } else {
-      return "Será necessário contratar um artista 3D especializado para produzir toda a modelagem do veículo. Essa etapa aumenta significativamente o tempo de produção, envolve fornecedores externos e eleva o custo total do projeto. O valor adicional cobre exclusivamente essa produção especializada.";
+      return "Sem o modelo 3D, é necessário produzir todo o asset do veículo do zero. Isso envolve um artista 3D especializado, aumenta o prazo e o investimento. O valor adicional cobre exclusivamente essa produção.";
     }
   };
 
   const getVerbatimPackageExplanation = () => {
     if (selectedPackage === "website") {
-      return "Caso a empresa deseje aproveitar o projeto para modernizar toda sua presença digital, é possível desenvolver o configurador integrado a um novo website institucional. Nesse formato, além do configurador, toda a estrutura do site é reformulada para oferecer uma experiência moderna, rápida e focada em conversão.";
+      return "Além do configurador 3D, todo o site é reconstruído para maximizar conversão. Uma presença digital completa que posiciona sua marca no mais alto nível.";
     } else {
-      return "Desenvolvimento exclusivo do sistema do configurador interativo pronto para ser integrado ao seu site ou portal atual.";
+      return "Configurador 3D completo, pronto para ser integrado ao seu site atual. Sua ferramenta de vendas começa a trabalhar em dias.";
     }
   };
 
@@ -76,13 +76,13 @@ export default memo(function SectionInvestimento() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="font-mono text-xs text-brand-gold font-bold tracking-widest uppercase block">
-            [ simulação de investimento transparente ]
+            [ investimento em resultado ]
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Investimento
+            Invista em uma ferramenta que vende para você
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-light">
-            Selecione o escopo desejado e a disponibilidade de arquivos 3D para visualizar o orçamento e detalhamento do projeto em tempo real.
+            Mais que um software. Um ativo comercial de longo prazo que valoriza sua marca e acelera suas vendas todos os dias.
           </p>
         </div>
 
@@ -95,7 +95,7 @@ export default memo(function SectionInvestimento() {
             {/* Control Group 1: Choose Package Scope */}
             <div className="p-6 md:p-8 rounded-3xl bg-brand-dark/40 border border-white/5 space-y-4">
               <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest block">
-                Etapa 1: Selecione o Escopo do Projeto
+                Etapa 1: Escolha o pacote ideal para sua marca
               </span>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -119,7 +119,7 @@ export default memo(function SectionInvestimento() {
                     </h3>
                   </div>
                   <span className="text-[11px] text-zinc-400 font-light leading-snug">
-                    Desenvolvimento exclusivo do configurador 3D sob medida.
+                    Seu configurador interativo personalizado. Integra ao site atual e começa a vender.
                   </span>
                 </button>
 
@@ -139,11 +139,11 @@ export default memo(function SectionInvestimento() {
                       {selectedPackage === "website" && <div className="w-2 h-2 rounded-full bg-emerald-500" />}
                     </div>
                     <h3 className="text-base font-bold text-white tracking-tight">
-                      Configurador 3D + Reformulação do Website
+                      Completo: Configurador + Site Reformulado
                     </h3>
                   </div>
                   <span className="text-[11px] text-zinc-400 font-light leading-snug">
-                    Configurador integrado a um novo website institucional focado em conversão.
+                    Toda a presença digital da sua marca reconstruída com o configurador no centro da experiência.
                   </span>
                 </button>
               </div>
@@ -154,9 +154,9 @@ export default memo(function SectionInvestimento() {
               <div className="flex justify-between items-start">
                 <div className="space-y-0.5">
                   <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest block">
-                    Etapa 2: Asset 3D do Veículo
+                    Etapa 2: Modelo 3D do Veículo
                   </span>
-                  <span className="text-xs text-zinc-400 font-light">Selecione se sua empresa já possui o modelo 3D do veículo.</span>
+                  <span className="text-xs text-zinc-400 font-light">Sua empresa já possui o modelo 3D do veículo?</span>
                 </div>
               </div>
 
@@ -269,23 +269,23 @@ export default memo(function SectionInvestimento() {
                 </div>
 
                 <div className="space-y-2.5">
-                  <span className="text-[10px] text-zinc-500 font-mono uppercase block">Incluso no Desenvolvimento:</span>
+                  <span className="text-[10px] text-zinc-500 font-mono uppercase block">O que está incluído:</span>
                   <div className="grid grid-cols-2 gap-2 font-mono text-[10px] text-zinc-400">
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
-                      <span>Foco em Conversão</span>
+                      <span>Experiência que vende</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
-                      <span>Otimização WebGL</span>
+                      <span>Performance em qualquer tela</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
-                      <span>Interface Responsiva</span>
+                      <span>Design responsivo completo</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
-                      <span>Exportador PDF</span>
+                      <span>PDF de configuração</span>
                     </div>
                   </div>
                 </div>

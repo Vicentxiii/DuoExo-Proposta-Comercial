@@ -32,7 +32,7 @@ export default memo(function SectionCondicoes() {
               </h2>
             </div>
             <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed">
-              Estrutura contratual simplificada para início imediato da engenharia de software e modelagem tridimensional.
+              Contrato simples e direto. Você começa a colocar sua ferramenta de vendas para funcionar em até 60 dias.
             </p>
           </div>
 

@@ -119,7 +119,7 @@ export default memo(function InteractiveConfigurator() {
             <div className="flex items-center gap-2">
               <Sliders className="w-4 h-4 text-brand-accent animate-pulse" />
               <h4 className="font-display font-semibold text-xs text-white uppercase tracking-wider">
-                Simulador 3D Interativo: Lexus Sport
+                Prévia Interativa: Lexus Sport Concept
               </h4>
             </div>
             
@@ -130,7 +130,7 @@ export default memo(function InteractiveConfigurator() {
           </div>
 
           {/* Visual Canvas Simulator */}
-          <div className="relative rounded-2xl bg-white border border-white/10 flex items-center justify-center min-h-[160px] sm:min-h-[220px] md:min-h-[320px] overflow-hidden group w-full">
+          <div className="relative rounded-2xl bg-white border border-white/10 flex items-center justify-center min-h-[200px] sm:min-h-[260px] md:min-h-[320px] overflow-hidden group w-full">
             <ThreeCarViewer
               rotationAngle={rotationAngle}
               onRotationChange={setRotationAngle}
@@ -143,7 +143,7 @@ export default memo(function InteractiveConfigurator() {
             {/* Interactive Help Hint */}
             <div className="absolute bottom-3 left-4 pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 font-mono text-[9px] text-zinc-600">
               <Info className="w-3.5 h-3.5 text-brand-accent" />
-              <span>Arraste para girar • Scroll para Zoom</span>
+              <span>Gire com o mouse • Aproxime com scroll</span>
             </div>
           </div>
 
@@ -284,7 +284,7 @@ export default memo(function InteractiveConfigurator() {
             ) : (
               <>
                 <Download className="w-3.5 h-3.5 transform group-hover:translate-y-0.5 transition-transform" />
-                <span>Gerar PDF de Resumo</span>
+                <span>Gerar PDF da Configuração</span>
               </>
             )}
           </button>

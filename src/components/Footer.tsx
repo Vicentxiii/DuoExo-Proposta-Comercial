@@ -26,7 +26,7 @@ export default memo(function Footer() {
             <BrandLogo className="h-4 sm:h-5 text-white/80 hover:text-white" />
             <span className="h-4 w-px bg-white/10 hidden sm:inline" />
             <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest hidden sm:inline">
-              PROPOSTA DE ALTO PADRÃO
+              EXPERIÊNCIA QUE VENDE
             </span>
           </div>
 
@@ -46,11 +46,11 @@ export default memo(function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
             <span>© 2026 DWO. Todos os direitos reservados.</span>
             <span className="hidden sm:inline">•</span>
-            <span>Documento confidencial para uso exclusivo corporativo.</span>
+            <span>Proposta confidencial de uso exclusivo.</span>
           </div>
 
           <div className="flex items-center gap-1.5 font-mono text-[10px] text-zinc-400">
-            <span>Desenvolvido com excelência por</span>
+            <span>Projetado por</span>
             <a
               href="https://instagram.com/vicenteczar.dev"
               target="_blank"

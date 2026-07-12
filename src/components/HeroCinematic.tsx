@@ -85,11 +85,11 @@ export default function HeroCinematic() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-white leading-[1.05]"
+              className="text-4xl sm:text-6xl md:text-8xl font-extrabold md:font-display tracking-tight text-white leading-[1.05]"
             >
-              Configurador 3D <br />
+              Seu cliente decide a compra<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500">
-                Interativo para Veículos
+                antes de entrar no showroom
               </span>
             </motion.h1>
           </div>
@@ -102,39 +102,32 @@ export default function HeroCinematic() {
 
           <motion.h2
             variants={itemVariants}
-            className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-wide text-white max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-2xl md:text-3xl font-semibold md:font-display tracking-wide text-white max-w-4xl mx-auto leading-relaxed"
           >
-            Muito mais do que um configurador. Uma ferramenta de vendas.
+            Mais que um configurador. Uma máquina de fechar negócios.
           </motion.h2>
 
           {/* Primary opening verbatim paragraph block */}
-          <div className="max-w-3xl mx-auto space-y-6 pt-6">
+          <div className="max-w-3xl mx-auto space-y-5 pt-6">
             <motion.p
               variants={itemVariants}
               className="text-zinc-400 text-sm sm:text-base leading-relaxed font-light"
             >
-              Hoje, o cliente moderno não quer apenas visualizar um veículo. Ele quer <strong className="text-white font-medium">interagir</strong>, <strong className="text-white font-medium">personalizar</strong>, <strong className="text-white font-medium">comparar</strong> e ter segurança antes da compra.
+              Todo cliente que entra no seu site quer visualizar o veículo ideal. Se ele não consegue, você perde uma venda.
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-zinc-400 text-sm sm:text-base leading-relaxed font-light"
             >
-              Empresas que continuam utilizando galerias de imagens estáticas ou apresentações tradicionais acabam perdendo atenção, tempo comercial e oportunidades de venda.
+              Com um configurador 3D interativo, seu cliente escolhe cores, rodas, acessórios e visualiza cada detalhe em tempo real. Sozinho. Em segundos.
             </motion.p>
 
             <motion.p
               variants={itemVariants}
-              className="text-zinc-400 text-sm sm:text-base leading-relaxed font-light"
+              className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium"
             >
-              Cada visitante que abandona seu site sem conseguir visualizar exatamente o veículo que deseja representa uma oportunidade perdida.
-            </motion.p>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-brand-accent text-sm sm:text-base font-medium tracking-wide"
-            >
-              Nosso objetivo é eliminar essa perda.
+              Resultado: mais tempo no site, mais valor percebido na marca e uma ferramenta que trabalha 24 horas por dia fechando vendas para você.
             </motion.p>
           </div>
 

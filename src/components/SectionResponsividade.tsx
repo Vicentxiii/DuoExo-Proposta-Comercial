@@ -9,9 +9,9 @@ import { Smartphone, Monitor } from "lucide-react";
 
 export default memo(function SectionResponsividade() {
   const listItems = [
-    { title: "Sem adaptações improvisadas.", desc: "Layout desenvolvido sob medida, garantindo toque perfeito." },
-    { title: "Sem perda de funcionalidades.", desc: "Todos os controles e exportações mantidos intactos no mobile." },
-    { title: "A experiência será consistente em qualquer tela.", desc: "Poder de renderização otimizado para celulares comuns e modernos." }
+    { title: "Seu cliente acessa de qualquer lugar.", desc: "Do celular ao desktop, a experiência é completa e fluida." },
+    { title: "Nenhuma função fica de fora no mobile.", desc: "Toda a interatividade e exportação de PDF preservadas." },
+    { title: "Performance de ponta em qualquer dispositivo.", desc: "Renderização otimizada para rodar com fluidez até em celulares de entrada." }
   ];
 
   return (
@@ -105,19 +105,19 @@ export default memo(function SectionResponsividade() {
           <div className="lg:col-span-6 order-1 lg:order-2 space-y-8">
             <div className="space-y-4">
               <span className="font-mono text-xs text-brand-accent font-semibold tracking-widest uppercase block">
-                [ design adaptativo e responsivo ]
+                [ presença total em qualquer tela ]
               </span>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                Responsividade
+                Experiência completa onde seu cliente estiver
               </h2>
             </div>
 
             <div className="space-y-4">
               <p className="text-xl font-medium text-white tracking-tight leading-snug">
-                Mais de 80% dos acessos atualmente acontecem através de smartphones.
+                Mais de 80% dos acessos acontecem pelo celular. Sua ferramenta de vendas precisa estar lá.
               </p>
               <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
-                Por esse motivo, todo o configurador será desenvolvido para oferecer uma experiência completa tanto em desktop quanto em dispositivos móveis.
+                Do smartphone ao desktop, cada interação é preservada. Seu cliente nunca perde a experiência, independente do dispositivo que estiver usando.
               </p>
             </div>
 
