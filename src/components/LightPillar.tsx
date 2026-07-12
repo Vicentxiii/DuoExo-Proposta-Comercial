@@ -43,7 +43,9 @@ const LightPillar = ({
   const mouseRef = useRef(new THREE.Vector2(0, 0));
   const timeRef = useRef(0);
   const rotationSpeedRef = useRef(rotationSpeed);
+  const isVisibleRef = useRef(true);
   const [webGLSupported, setWebGLSupported] = useState(true);
+  const [isInView, setIsInView] = useState(true);
 
   useEffect(() => {
     const canvas = document.createElement('canvas');
@@ -52,6 +54,21 @@ const LightPillar = ({
       setWebGLSupported(false);
     }
   }, []);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.01 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    isVisibleRef.current = isInView;
+  }, [isInView]);
 
   useEffect(() => {
     if (!containerRef.current || !webGLSupported) return;
@@ -262,6 +279,10 @@ const LightPillar = ({
 
     const animate = (currentTime: number) => {
       if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) return;
+      if (!isVisibleRef.current) {
+        rafRef.current = requestAnimationFrame(animate);
+        return;
+      }
 
       const deltaTime = currentTime - lastTime;
 

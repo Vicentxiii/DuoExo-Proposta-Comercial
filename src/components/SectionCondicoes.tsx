@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { memo } from "react";
 import { motion } from "motion/react";
-import { CalendarRange, CreditCard, CheckSquare, Sparkles } from "lucide-react";
+import { CalendarRange, CreditCard, CheckSquare } from "lucide-react";
 
-export default function SectionCondicoes() {
+export default memo(function SectionCondicoes() {
   return (
     <section
       id="condicoes"
@@ -88,4 +89,4 @@ export default function SectionCondicoes() {
       </div>
     </section>
   );
-}
+});

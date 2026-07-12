@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { memo } from "react";
 import { motion } from "motion/react";
-import { Quote, Flame, Target, Sparkles, TrendingUp, MessageCircle, ArrowRight } from "lucide-react";
+import { Quote, TrendingUp, MessageCircle, ArrowRight } from "lucide-react";
 
-export default function SectionConsideracoes() {
+export default memo(function SectionConsideracoes() {
   const contrastItems = [
     { text: "Enquanto concorrentes apresentam imagens estáticas, sua empresa oferecerá uma experiência imersiva.", highlight: "experiência imersiva" },
     { text: "Enquanto outros dependem da explicação do vendedor, seu cliente poderá visualizar exatamente o veículo que deseja.", highlight: "visualizar exatamente o veículo" },
@@ -132,4 +133,4 @@ export default function SectionConsideracoes() {
       </div>
     </section>
   );
-}
+});

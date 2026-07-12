@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from "motion/react";
-import { ArrowUp, Award, Clock, Heart, Compass, Shield } from "lucide-react";
+import { memo } from "react";
+import { ArrowUp } from "lucide-react";
 import BrandLogo from "./BrandLogo";
 
-export default function Footer() {
+export default memo(function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/5 pt-8 text-[11px] text-zinc-500 font-light">
           
           <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-            <span>© {new Date().getFullYear()} DWO. Todos os direitos reservados.</span>
+            <span>© 2026 DWO. Todos os direitos reservados.</span>
             <span className="hidden sm:inline">•</span>
             <span>Documento confidencial para uso exclusivo corporativo.</span>
           </div>
@@ -67,4 +67,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});

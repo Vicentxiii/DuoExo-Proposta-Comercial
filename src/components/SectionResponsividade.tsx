@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { memo } from "react";
 import { motion } from "motion/react";
-import { Smartphone, Monitor, Compass, Sparkles, AlertCircle } from "lucide-react";
+import { Smartphone, Monitor } from "lucide-react";
 
-export default function SectionResponsividade() {
+export default memo(function SectionResponsividade() {
   const listItems = [
     { title: "Sem adaptações improvisadas.", desc: "Layout desenvolvido sob medida, garantindo toque perfeito." },
     { title: "Sem perda de funcionalidades.", desc: "Todos os controles e exportações mantidos intactos no mobile." },
@@ -50,6 +51,7 @@ export default function SectionResponsividade() {
                       alt="Configurador 3D DuoExo" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                     <div className="absolute top-1.5 left-1.5 px-1 py-0.5 rounded bg-brand-accent/80 text-[6px] font-mono font-bold text-white tracking-widest uppercase">
                       ACTIVE RENDER
@@ -83,6 +85,7 @@ export default function SectionResponsividade() {
                       alt="Configurador Mobile DuoExo" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover/img2:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                     <div className="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-brand-gold/80 text-[5px] font-mono font-bold text-black uppercase">
                       60 FPS
@@ -145,4 +148,4 @@ export default function SectionResponsividade() {
       </div>
     </section>
   );
-}
+});

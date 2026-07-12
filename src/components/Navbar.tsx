@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Clock, Radio, Compass, Shield, Code, User, ArrowUpRight } from "lucide-react";
+import { Clock, User, ArrowUpRight } from "lucide-react";
 import BrandLogo from "./BrandLogo";
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       clearInterval(interval);
       window.removeEventListener("scroll", handleScroll);

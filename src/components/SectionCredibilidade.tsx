@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { memo } from "react";
 import { motion } from "motion/react";
-import { ShieldCheck, Newspaper, Linkedin, Github, Globe, Instagram, ExternalLink } from "lucide-react";
+import { ShieldCheck, Newspaper, Linkedin, Github, Globe, Instagram } from "lucide-react";
 
-export default function SectionCredibilidade() {
+export default memo(function SectionCredibilidade() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -79,6 +80,7 @@ export default function SectionCredibilidade() {
                 alt="Vicente - Criador e Autoridade"
                 className="w-full h-full object-cover object-top opacity-85 transition-transform duration-700 group-hover:scale-102"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
               {/* Smooth darkening overlay gradients to ensure excellent contrast for text */}
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/65 to-brand-dark/20" />
@@ -181,6 +183,7 @@ export default function SectionCredibilidade() {
                         alt={`Selo de Destaque ${outlet.name}`}
                         className="max-h-40 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-105"
                         referrerPolicy="no-referrer"
+                        loading="lazy"
                       />
                     </div>
 
@@ -203,4 +206,4 @@ export default function SectionCredibilidade() {
       </div>
     </section>
   );
-}
+});

@@ -3,11 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { memo } from "react";
 import { motion } from "motion/react";
-import { Cpu, ShieldAlert, Award, Clock3, Compass, Settings, Zap } from "lucide-react";
+import { Cpu, Award, Clock3, Settings } from "lucide-react";
 import BorderGlow from "./BorderGlow";
 
-export default function SectionComplexidade() {
+export default memo(function SectionComplexidade() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -195,4 +196,4 @@ export default function SectionComplexidade() {
       </div>
     </section>
   );
-}
+});

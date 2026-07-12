@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
 export default function CustomCursor() {
@@ -17,6 +17,9 @@ export default function CustomCursor() {
   const springConfig = { damping: 40, stiffness: 400, mass: 0.4 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
+
+  // Use ref to avoid isVisible in effect deps (prevents re-attaching listeners on every visibility change)
+  const isVisibleRef = useRef(false);
 
   useEffect(() => {
     // Check if device is touch-based
@@ -33,14 +36,19 @@ export default function CustomCursor() {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      if (!isVisibleRef.current) {
+        isVisibleRef.current = true;
+        setIsVisible(true);
+      }
     };
 
     const handleMouseLeave = () => {
+      isVisibleRef.current = false;
       setIsVisible(false);
     };
 
     const handleMouseEnter = () => {
+      isVisibleRef.current = true;
       setIsVisible(true);
     };
 
@@ -77,7 +85,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseover", handleMouseOver);
       document.documentElement.classList.remove("custom-cursor-active");
     };
-  }, [mouseX, mouseY, isVisible]);
+  }, [mouseX, mouseY]);
 
   if (isMobile || !isVisible) return null;
 

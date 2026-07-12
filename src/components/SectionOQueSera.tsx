@@ -3,12 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { memo } from "react";
 import { motion } from "motion/react";
-import { CheckCircle2, ChevronRight, FileText, Sparkles } from "lucide-react";
+import { CheckCircle2, FileText } from "lucide-react";
 import InteractiveConfigurator from "./InteractiveConfigurator";
 import BrandLogo from "./BrandLogo";
 
-export default function SectionOQueSera() {
+export default memo(function SectionOQueSera() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -145,4 +146,4 @@ export default function SectionOQueSera() {
       </div>
     </section>
   );
-}
+});

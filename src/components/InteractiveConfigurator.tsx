@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { RotateCw, Sparkles, Sliders, CheckCircle, Eye, Download, Info } from "lucide-react";
+import { RotateCw, Sliders, CheckCircle, Download, Info } from "lucide-react";
 import BorderGlow from "./BorderGlow";
 import ThreeCarViewer from "./ThreeCarViewer";
 
@@ -23,7 +23,7 @@ interface WheelPreset {
   desc: string;
 }
 
-export default function InteractiveConfigurator() {
+export default memo(function InteractiveConfigurator() {
   const [paint, setPaint] = useState<string>("stealth");
   const [wheels, setWheels] = useState<string>("aero");
   const [wheelColor, setWheelColor] = useState<string>("#121214");
@@ -59,7 +59,7 @@ export default function InteractiveConfigurator() {
     { name: "Vermelho Sport", hex: "#ef4444" },
   ];
 
-  const triggerPDFMock = () => {
+  const triggerPDFMock = useCallback(() => {
     setIsDownloading(true);
     
     setTimeout(() => {
@@ -84,7 +84,7 @@ export default function InteractiveConfigurator() {
       link.download = `aura-proposta-configurador.txt`;
       link.click();
     }, 1200);
-  };
+  }, [paint, wheels, wheelColor, aeroKit]);
 
   return (
     <BorderGlow
@@ -292,4 +292,4 @@ export default function InteractiveConfigurator() {
       </div>
     </BorderGlow>
   );
-}
+});

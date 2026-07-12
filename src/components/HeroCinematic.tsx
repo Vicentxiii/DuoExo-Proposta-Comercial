@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { ChevronDown, Sparkles, Shield, Compass } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import BrandLogo from "./BrandLogo";
 
 export default function HeroCinematic() {

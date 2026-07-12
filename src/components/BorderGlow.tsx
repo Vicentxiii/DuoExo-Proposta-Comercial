@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useRef, useCallback, useEffect, ReactNode, CSSProperties } from 'react';
+import React, { useRef, useCallback, useEffect, useMemo, ReactNode, CSSProperties } from 'react';
 import './BorderGlow.css';
 
 interface HSL {
@@ -174,9 +174,10 @@ const BorderGlow = ({
     });
   }, [animated]);
 
-  const glowVars = buildGlowVars(glowColor, glowIntensity);
+  const glowVars = useMemo(() => buildGlowVars(glowColor, glowIntensity), [glowColor, glowIntensity]);
+  const gradientVars = useMemo(() => buildGradientVars(colors), [colors]);
 
-  const customStyles = {
+  const customStyles = useMemo(() => ({
     '--card-bg': backgroundColor,
     '--edge-sensitivity': `${edgeSensitivity}`,
     '--border-radius': `${borderRadius}px`,
@@ -184,8 +185,8 @@ const BorderGlow = ({
     '--cone-spread': `${coneSpread}`,
     '--fill-opacity': `${fillOpacity}`,
     ...glowVars,
-    ...buildGradientVars(colors),
-  } as CSSProperties;
+    ...gradientVars,
+  } as CSSProperties), [backgroundColor, edgeSensitivity, borderRadius, glowRadius, coneSpread, fillOpacity, glowVars, gradientVars]);
 
   return (
     <div

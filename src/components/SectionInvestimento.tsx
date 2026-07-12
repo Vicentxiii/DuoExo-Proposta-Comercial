@@ -3,16 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Check, ShieldCheck, Zap, Sliders, ArrowRight, HelpCircle } from "lucide-react";
+import { ShieldCheck, Sliders } from "lucide-react";
 import BorderGlow from "./BorderGlow";
 import LightPillar from "./LightPillar";
 
-export default function SectionInvestimento() {
+export default memo(function SectionInvestimento() {
   // Simulator states
   const [hasAsset, setHasAsset] = useState<boolean>(true);
   const [selectedPackage, setSelectedPackage] = useState<"standard" | "website">("standard");
+
+  const handlePackageSelect = useCallback((pkg: "standard" | "website") => setSelectedPackage(pkg), []);
+  const handleAssetSelect = useCallback((val: boolean) => setHasAsset(val), []);
 
   // Prices
   // Standard package (Configurador 3D)
@@ -98,7 +101,7 @@ export default function SectionInvestimento() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Standard Package Option */}
                 <button
-                  onClick={() => setSelectedPackage("standard")}
+                  onClick={() => handlePackageSelect("standard")}
                   className={`p-6 rounded-2xl border text-left transition-all focus:outline-none flex flex-col justify-between h-48 ${
                     selectedPackage === "standard"
                       ? "bg-brand-accent/5 border-brand-accent text-white"
@@ -122,7 +125,7 @@ export default function SectionInvestimento() {
 
                 {/* Website Integration Package Option */}
                 <button
-                  onClick={() => setSelectedPackage("website")}
+                  onClick={() => handlePackageSelect("website")}
                   className={`p-6 rounded-2xl border text-left transition-all focus:outline-none flex flex-col justify-between h-48 ${
                     selectedPackage === "website"
                       ? "bg-emerald-500/5 border-emerald-500 text-white border-glow-emerald"
@@ -160,7 +163,7 @@ export default function SectionInvestimento() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Has Asset (True) */}
                 <button
-                  onClick={() => setHasAsset(true)}
+                  onClick={() => handleAssetSelect(true)}
                   className={`p-4 rounded-xl border text-left transition-all text-xs font-medium focus:outline-none ${
                     hasAsset
                       ? "bg-brand-accent/5 border-brand-accent text-white"
@@ -173,7 +176,7 @@ export default function SectionInvestimento() {
 
                 {/* No Asset (False) */}
                 <button
-                  onClick={() => setHasAsset(false)}
+                  onClick={() => handleAssetSelect(false)}
                   className={`p-4 rounded-xl border text-left transition-all text-xs font-medium focus:outline-none ${
                     !hasAsset
                       ? "bg-brand-accent/5 border-brand-accent text-white"
@@ -296,4 +299,4 @@ export default function SectionInvestimento() {
       </div>
     </section>
   );
-}
+});

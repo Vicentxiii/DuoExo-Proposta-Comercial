@@ -3,17 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { lazy, Suspense } from "react";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import HeroCinematic from "./components/HeroCinematic";
-import SectionOQueSera from "./components/SectionOQueSera";
-import SectionComplexidade from "./components/SectionComplexidade";
-import SectionCredibilidade from "./components/SectionCredibilidade";
-import SectionResponsividade from "./components/SectionResponsividade";
-import SectionInvestimento from "./components/SectionInvestimento";
-import SectionCondicoes from "./components/SectionCondicoes";
-import SectionConsideracoes from "./components/SectionConsideracoes";
 import Footer from "./components/Footer";
+
+const SectionOQueSera = lazy(() => import("./components/SectionOQueSera"));
+const SectionComplexidade = lazy(() => import("./components/SectionComplexidade"));
+const SectionCredibilidade = lazy(() => import("./components/SectionCredibilidade"));
+const SectionResponsividade = lazy(() => import("./components/SectionResponsividade"));
+const SectionInvestimento = lazy(() => import("./components/SectionInvestimento"));
+const SectionCondicoes = lazy(() => import("./components/SectionCondicoes"));
+const SectionConsideracoes = lazy(() => import("./components/SectionConsideracoes"));
+
+function SectionFallback() {
+  return <div className="min-h-screen bg-brand-dark" />;
+}
 
 export default function App() {
   return (
@@ -25,7 +31,7 @@ export default function App() {
         style={{
           width: "100%",
           transformOrigin: "left",
-          animation: "none" // Managed via standard CSS if needed or just left simple
+          animation: "none"
         }} 
       />
 
@@ -44,25 +50,39 @@ export default function App() {
         <HeroCinematic />
 
         {/* Section 2: O Que Será Desenvolvido + Live interactive 3D Simulator */}
-        <SectionOQueSera />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionOQueSera />
+        </Suspense>
 
         {/* Section 3: Por que este projeto possui alto valor? Bento Grid */}
-        <SectionComplexidade />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionComplexidade />
+        </Suspense>
 
         {/* Section 4: Credibilidade (G1, InfoMoney, CNN Brasil, Forbes) */}
-        <SectionCredibilidade />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionCredibilidade />
+        </Suspense>
 
         {/* Section 5: Responsividade Dual-device verification */}
-        <SectionResponsividade />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionResponsividade />
+        </Suspense>
 
         {/* Section 6: Investimento Interactive Pricing calculator */}
-        <SectionInvestimento />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionInvestimento />
+        </Suspense>
 
         {/* Section 7: Condições Comerciais, timelines, and signal stages */}
-        <SectionCondicoes />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionCondicoes />
+        </Suspense>
 
         {/* Section 8: Considerações finais vision statement */}
-        <SectionConsideracoes />
+        <Suspense fallback={<SectionFallback />}>
+          <SectionConsideracoes />
+        </Suspense>
       </main>
 
       {/* Structured Status Footer */}

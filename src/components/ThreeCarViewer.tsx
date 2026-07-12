@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Loader2 } from 'lucide-react';
@@ -17,7 +17,7 @@ interface ThreeCarViewerProps {
   aeroKit: boolean;
 }
 
-export default function ThreeCarViewer({
+const ThreeCarViewer = React.memo(function ThreeCarViewer({
   rotationAngle,
   onRotationChange,
   paintColor,
@@ -33,8 +33,8 @@ export default function ThreeCarViewer({
   // Drag interaction state
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const lastPointerPos = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
-  const pitchRef = useRef<number>(0); // Vertical rotation in degrees
-  const yawRef = useRef<number>(rotationAngle); // Horizontal rotation in degrees
+  const pitchRef = useRef<number>(0);
+  const yawRef = useRef<number>(rotationAngle);
 
   // Keep references to loaded elements to modify them on props change
   const modelRef = useRef<THREE.Group | null>(null);
@@ -47,6 +47,10 @@ export default function ThreeCarViewer({
   const rotationRef = useRef<number>(rotationAngle);
   const zoomRef = useRef<number>(1.0);
 
+  // Off-screen pause tracking
+  const isVisibleRef = useRef<boolean>(true);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     // Sync external rotation changes if any, but internal dragging will also update yawRef
     if (!isDragging) {
@@ -54,6 +58,22 @@ export default function ThreeCarViewer({
     }
     rotationRef.current = rotationAngle;
   }, [rotationAngle, isDragging]);
+
+  // Pause RAF when component leaves viewport
+  const [isInView, setIsInView] = useState(false);
+  const viewportRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    const el = mountRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.01 }
+    );
+    observer.observe(el);
+    viewportRef.current = observer;
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -314,6 +334,7 @@ export default function ThreeCarViewer({
     let animationFrameId: number;
     function animate() {
       animationFrameId = requestAnimationFrame(animate);
+      if (!isVisibleRef.current) return;
       
       if (modelRef.current) {
         // Smooth rotation interpolation
@@ -371,6 +392,11 @@ export default function ThreeCarViewer({
       }
     };
   }, []); // Run setup once on mount
+
+  // Sync isVisibleRef with IntersectionObserver state
+  useEffect(() => {
+    isVisibleRef.current = isInView;
+  }, [isInView]);
 
   // React to paint color changes
   useEffect(() => {
@@ -491,4 +517,6 @@ export default function ThreeCarViewer({
       )}
     </div>
   );
-}
+});
+
+export default ThreeCarViewer;
